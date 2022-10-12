@@ -94,7 +94,7 @@ void loop() {
 Upload your code. Check your serial monitor to see if the button is working properly.
 It should say: "sending button ->", when the button input is being sent to your shared feed.
 
-The go to your Adafruit IO feed and check if you get a signal from the button.
+Then go to your Adafruit IO feed and check if you get a signal from the button.
 It should look something like this:
 
 <img src="" width=30% height=30%>

@@ -14,20 +14,21 @@ This way we'll be able to say hi! :wave:
 ## :computer: 1 - New feed 
 Log into your Adafruit IO account and create a new feed. We named our feed 'digital'.
 
-<img src="" width=30% height=30%>
-<img src="" width=30% height=30%>
-<img src="" width=30% height=30%>
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/newfeed.PNG" width=75% height=75%> 
+
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/digitalfeed.PNG" width=40% height=40%> <img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/myfeed.PNG" width=50% height=50%>
 
 ## :bellhop_bell: 2 - Button 
 Connect the button to your board. We connected out button to D0 (red = 3.3, black to gnd, yellow to D0).
 
+<img src="" width=50% height=50% alt="button">
+
 ## :crystal_ball: 3 - Code 
 Open your Arduino IDE and open an example sketch from Examples > adafruit io > Adafruitio_06_digital.in
 Change the BUTTON_PIN to the one you're using, in our case we changed it to BUTTON_PIN D0.
-Also put in your adafruit key and wifi password. Now your code is ready to go! :tada:
+Also put in your adafruit key and wifi password, you can do this in the config.h tab. Now your code is ready to go! :tada:
 
 ```
-// digital pin 5
 #define BUTTON_PIN D0
 
 // button state
@@ -38,7 +39,6 @@ bool last = false;
 AdafruitIO_Feed *digital = io.feed("digital");
 
 void setup() {
-
   // set button pin as an input
   pinMode(BUTTON_PIN, INPUT);
 
@@ -61,20 +61,16 @@ void setup() {
   // we are connected
   Serial.println();
   Serial.println(io.statusText());
-
 }
 
 void loop() {
-
   // io.run(); is required for all sketches.
-  // it should always be present at the top of your loop
-  // function. it keeps the client connected to
-  // io.adafruit.com, and processes any incoming data.
+  // it should always be present at the top of your loop function. 
+  // it keeps the client connected to io.adafruit.com, and processes any incoming data.
   io.run();
 
   // grab the current state of the button.
-  // we have to flip the logic because we are
-  // using a pullup resistor.
+  // we have to flip the logic because we are using a pullup resistor.
   if(digitalRead(BUTTON_PIN) == LOW)
     current = true;
   else
@@ -91,7 +87,6 @@ void loop() {
 
   // store last button state
   last = current;
-
 }
 ```
 

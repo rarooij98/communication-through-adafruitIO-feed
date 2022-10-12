@@ -18,6 +18,10 @@ Log into your Adafruit IO account and create a new feed. We named our feed 'digi
 
 <img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/digitalfeed.PNG" width=40% height=40%> <img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/myfeed.PNG" width=50% height=50%>
 
+To create a shared feed, open your feed and click Sharing. Invite the other person to your feed with their email and don't forget to give them READ + WRITE rights.
+
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/sharing.PNG" width=60% height=60%>
+
 ## :bellhop_bell: 2 - Button 
 Connect the button to your board. We connected our button to D0 (red = 3.3, black to gnd, yellow to D0).
 

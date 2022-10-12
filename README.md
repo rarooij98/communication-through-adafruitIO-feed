@@ -12,11 +12,11 @@ This way we'll be able to say hi! :wave:
 - Wifi (not 5G)
 
 ## :computer: 1 - New feed 
-Log into your Adafruit IO account and create a new feed. We named our feed 'digital'.
+Log into your Adafruit IO account and create a new feed. We named our feed 'kussiekussielove'.
 
 <img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/newfeed.PNG" width=75% height=75%> 
 
-<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/digitalfeed.PNG" width=40% height=40%> <img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/myfeed.PNG" width=50% height=50%>
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/love.PNG" width=40% height=40%>
 
 To create a shared feed, open your feed and click Sharing. Invite the other person to your feed with their email and don't forget to give them READ + WRITE rights.
 
@@ -24,8 +24,6 @@ To create a shared feed, open your feed and click Sharing. Invite the other pers
 
 ## :bellhop_bell: 2 - Button 
 Connect the button to your board. We connected our button to D0 (red = 3.3, black to gnd, yellow to D0).
-
-<img src="" width=50% height=50% alt="button">
 
 ## :crystal_ball: 3 - Code 
 Open your Arduino IDE and open an example sketch from Examples > adafruit io > Adafruitio_06_digital.in
@@ -99,12 +97,20 @@ Upload your code. Check your serial monitor to see if the button is working prop
 It should say: "sending button ->", when the button input is being sent to your shared feed.
 
 Then go to your Adafruit IO feed and check if you get a signal from the button.
-It should look something like this:
 
-<img src="" width=30% height=30%>
+### :triangular_flag_on_post: Error
+Nothing happened when we pressed the button! We could see the confirmation message in the serial monitor, so we thought there must be a problem connecting to adafruit. We checked our code and found out we forgot to put in our feed name. Ofcourse it cannot connect to a feed it doesn't know.
+We had to refer to our feed like this:
 
-## :triangular_flag_on_post: Errors 
-...
+```
+AdafruitIO_Feed *digital = io.feed("kussiekussielove");
+```
+
+### It works! :tada:
+Now you can see the button input on your shared feed. It should look something like this:
+
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/output.PNG" width=75% height=75%>
+<img src="https://github.com/rarooij98/communication-through-adafruitIO-feed/blob/main/images/log.PNG" width=50% height=50%>
 
 ## :card_file_box: Sources:
 - https://learn.adafruit.com/adafruit-io-basics-feeds/sharing-a-feed

@@ -5,8 +5,6 @@ This way we'll be able to say hi! :wave:
 
 :calendar: **Date:** 12/10/2022
 
-:writing_hand: **By:** Robin van Rooij & Cynthia de Vries
-
 ### What do you need for this?
 - Adafruit IO account
 - esp8266 NodeMCU board
